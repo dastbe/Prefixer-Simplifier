@@ -1,0 +1,17 @@
+Compiler Versions:
+	flex 2.5.35
+	bison (GNU Bison) 2.3
+	i686-apple-darwin11-llvm-g++-4.2
+
+Compile:
+	make
+
+Usage:
+	./prefixer (-r) FILENAME
+
+Explanation:
+	I implemented five operators: plus, minus, times, division, and unary minus. The program takes a file containing a single infix expression and prints the prefix equivalent. Each prefix expression is wrapped in parenthesis ex. ( operator operand1 operand2 ). Output follows the input in that all operators are separated by a single space.
+
+	For the simplification step, the prefixer currently only simplifies pure integer expressions. For the sake of preserving the fact that all numbers are integers, it does not simplify division where the result would be fractional.
+
+	Let n be the number of characters in the input file. Since we know that there can be no more than n keywords/nodes, we will assume it as an upper bound on all inputs to the portion of our program. The runtime of the flex/bison parser is on the order of Theta(n), the simplification is Theta(n), and the print is Theta(n). Thus, this program has an overall runtime of Theta(n).
